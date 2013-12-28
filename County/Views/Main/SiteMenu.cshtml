@@ -9,7 +9,7 @@
             @Html.ActionLink("County", "Index", "Home", null, new { @class = "navbar-brand" })
         </div>
         <div class="navbar-collapse collapse">
-            <ul class="nav navbar-nav">
+            <ul class="nav navbar-nav" ng-click="itemClicked()">
                 <li><a href="/">Home</a></li>
                 <li><a href="/counter/new">New Counter</a></li>
             </ul>

@@ -1,6 +1,8 @@
 ﻿<div class="new-counter-view view" ng-controller="NewCounterCtrl">
-    Name: <input type="text" ng-model="name" />
-
-    <br />
-    <button ng-click="add()">Add</button>
+    <div class="form-group">
+        <label>Description</label>
+        <input type="text" class="form-control" placeholder="Description" ng-model="name">
+    </div>
+    
+    <button ng-click="add()" class="btn btn-primary">Add</button>
 </div>

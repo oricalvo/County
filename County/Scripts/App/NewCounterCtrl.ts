@@ -1,15 +1,18 @@
+/// <reference path="Counter.ts" />
+
 module CountyApp {
-    class NewCounterCtrl {
-        id: number;
-
-        constructor($scope, $location: ng.ILocationService) {
-            var me = this;
-
+    angular.module("CountyApp").controller("NewCounterCtrl", ["$scope", "$location", "Counter", "Storage",
+        function ($scope, $location, Counter: Counter, Storage: Storage) {
             $scope.add = function () {
-                $location.path("/");
-            }
-        }
-    }
+                try {
+                    var counter = new Counter($scope.name);
+                    Storage.addCounter(counter);
 
-    angular.module("CountyApp").controller("NewCounterCtrl", NewCounterCtrl);
+                    $location.path("/");
+                }
+                catch (err) {
+                    alert(err.message);
+                }
+            }
+        }]);
 }

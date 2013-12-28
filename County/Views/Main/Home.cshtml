@@ -1,3 +1,8 @@
 ﻿<div class="home-view view" ng-controller="HomeCtrl">
-
+    <ul>
+        <li ng-repeat="counter in counters">
+            <span class="name">{{counter.name}}</span>
+            <span class="value">{{counter.value}}</span>
+        </li>
+    </ul>
 </div>

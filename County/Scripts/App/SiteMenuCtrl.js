@@ -1,12 +1,13 @@
 var CountyApp;
 (function (CountyApp) {
-    var SiteMenuCtrl = (function () {
-        function SiteMenuCtrl($scope) {
-            var me = this;
+    angular.module("CountyApp").controller("SiteMenuCtrl", [
+        "$scope",
+        "$element",
+        function ($scope, $element) {
+            $scope.itemClicked = function () {
+                $element.find(".navbar-collapse").collapse('hide');
+            };
         }
-        return SiteMenuCtrl;
-    })();
-
-    angular.module("CountyApp").controller("SiteMenuCtrl", SiteMenuCtrl);
+    ]);
 })(CountyApp || (CountyApp = {}));
 //# sourceMappingURL=SiteMenuCtrl.js.map
